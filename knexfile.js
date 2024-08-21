@@ -1,10 +1,17 @@
-if (process.env.USER) require("dotenv").config();
+require("dotenv").config();
 
 const path = require("path");
 
+
 const {
-  DATABASE_URL = "postgresql://postgres@localhost/postgres",
+  NODE_ENV = "development",
+  DEVELOPMENT_DATABASE_URL,
+  PRODUCTION_DATABASE_URL,
 } = process.env;
+const DATABASE_URL =
+  NODE_ENV === "production"
+    ? PRODUCTION_DATABASE_URL
+    : DEVELOPMENT_DATABASE_URL;
 
 module.exports = {
   development: {
