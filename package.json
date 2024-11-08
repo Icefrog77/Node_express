@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
+    "build": "webpack --mode production",
     "migrate:latest": "knex migrate:latest",
     "seed:run": "knex seed:run",
     "start:dev": "nodemon src/server.js",
