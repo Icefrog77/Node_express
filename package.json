@@ -9,6 +9,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
+    "migrate:latest": "knex migrate:latest",
+    "seed:run": "knex seed:run",
     "start:dev": "nodemon src/server.js",
     "start:solution": "docker-compose up --build",
     "test": "jest",
